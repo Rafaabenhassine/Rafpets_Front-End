@@ -6,12 +6,14 @@ const initialState={
 ListProduct:[
     {
       id: Math.random(),
-      name: "iphone 13 pro max",
+      name: "Julius k9 Harnais IDC-POWER",
       description:
-        "Double SIM - Ecran Super Retina XDR OLED ProMotion 6.7, 120 Hz - Résolution 1284 x 2778px - Processeur Apple A15 Bionic Hexa-Core - RAM 6 Go",
-      price: "3500",
+        "Design innovant- Réfléchissant pour une sécurité dans l'obscurité - Tissu extérieur hydrofuge - Rembourrage intérieur confortable - Taille S - Coleur vert clair ",
+      
+      price: "100",
+      
       posterUrl:
-        "https://www.tunisianet.com.tn/230300-large/smartphone-apple-iphone-13-pro-max-5g-6-go-512-go-bleu.jpg",
+        "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/Sans-titre---2-02-Personnalis.png",
     available:false,
     counter:0,
     panier:false
@@ -19,41 +21,46 @@ ListProduct:[
   },
     {
       id: Math.random(),
-      name: "redmi note 11 pro max",
+      name: "Julius k9 Harnais IDC-POWER",
       description:
-        "Sim : Double - Ecran : 6.43 Super AMOLED, 120Hz- Résolution : 2400 x 1080 Pixels - Processeur : Mediatek Helio G96 (12 nm) - Système : Android 11",
-      price: "3000",
-      posterUrl: "https://i.ebayimg.com/images/g/8MYAAOSwXt5he24t/s-l1600.jpg",
-      available:false,
-      counter:0,
-      panier:false
-
+        "Design innovant- Réfléchissant pour une sécurité dans l'obscurité - Tissu extérieur hydrofuge - Rembourrage intérieur confortable - Taille M - Coleur : Vert Militaire , Fushia  , Rouge",
+      
+      price: "120",
+      
+      posterUrl:
+      "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/juli-08.png",
+        
+    available:false,
+    counter:0,
+    panier:false
+  
     },
     {
       id: Math.random(),
-      name: "samsung s22 ultra",
+      name: "Julius k9 Harnais IDC-POWER",
       description:
-        "Samsung Galaxy S22 ultra prix Tunisie - Galaxy S22 Ultra fiche technique Tunisie Couleur Phantom Black",
-      price: "4000",
+        "Design innovant- Réfléchissant pour une sécurité dans l'obscurité - Tissu extérieur hydrofuge - Rembourrage intérieur confortable - Taille L - Coleur : Bleue , Rouge  ",
+      
+      price: "140",
       posterUrl:
-        "https://www.samsungtunisie.tn/8225-large_default/samsung-galaxy-s22-ultra-prix-tunisie.jpg",
-        available:false,
-        counter:0,
-        panier:false
+        "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/reste-04-Personnalis.png",
+    counter:0,
+    panier:false
+  
 
       },
     {
       id: Math.random(),
-      name: "infinix note 12",
+      name: "Julius k9 Harnais IDC-POWER",
       description:
-        "Infinix Note 12 Pro Price In Tunisia - Mobile57 Tn",
-      price: "5000",
+        "Design innovant- Réfléchissant pour une sécurité dans l'obscurité - Tissu extérieur hydrofuge - Rembourrage intérieur confortable - Taille XL - Coleur : Noir",
+      
+      price: "150",
       posterUrl:
-        "https://www.mobile57.com/product_images/webp/Infinix-Note-12-Pro.webp",
-        available:true,
-        counter:0,
-        panier:false
-
+      "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/reste-06-1-Personnalis.png",
+    available:false,
+    counter:0,
+    panier:false
       }
   ],
    

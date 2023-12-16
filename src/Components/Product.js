@@ -16,8 +16,9 @@ function Product({ Prod,setTotal,total }) {
       <Card.Img variant="top" src={Prod.posterUrl} />
       <Card.Body>
         <Card.Title>{Prod.name}</Card.Title>
-        <Card.Text>{Prod.description}</Card.Text>
-        <Card.Text>{Prod.price}</Card.Text>
+        <Card.Text>Description : {Prod.description}</Card.Text>
+        
+        <Card.Text>Price : {Prod.price}</Card.Text>
         <Button onClick={()=>dispatch(min(Prod.id))} style={{borderRadius:50}}>-</Button>  
         <i>{Prod.compter}</i>
         <Button onClick={()=>dispatch(plus(Prod.id))} style={{borderRadius:50}}>+</Button>
