@@ -1,9 +1,9 @@
 import React from 'react'
-import "./Profile.css"
-const Profile = () => {
+import "./User.css"
+const User = () => {
   return (
     <div class="container">  
-  <form id="profile" action="" method="post">
+  <form id="user" action="" method="post">
     <h3>Quick Contact</h3>
     <h4>Contact us today, and get reply with in 24 hours!</h4>
     <fieldset>
@@ -31,4 +31,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default User

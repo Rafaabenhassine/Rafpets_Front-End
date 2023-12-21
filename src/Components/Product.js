@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { addPanier, deleteProduct, availableProduct, min, plus } from "../JS/Actions/Actions";
+import { addCart, deleteProduct, availableProduct, min, plus } from "../JS/Actions/Actions";
 
 
 
@@ -20,16 +20,16 @@ function Product({ Prod,setTotal,total }) {
         
         <Card.Text>Price : {Prod.price}</Card.Text>
         <Button onClick={()=>dispatch(min(Prod.id))} style={{borderRadius:50}}>-</Button>  
-        <i>{Prod.compter}</i>
+        <i>{Prod.counter}</i>
         <Button onClick={()=>dispatch(plus(Prod.id))} style={{borderRadius:50}}>+</Button>
         <Button
           onClick={() => dispatch(availableProduct(Prod.id))}
           variant={Prod.available ? "success" : "danger"}
         >
-          {Prod.available ? <span>available</span> : <span>unvailable</span>}
+          {Prod.available ? <span>available</span> : <span>unavailable</span>}
         </Button>
         <Button onClick={() => dispatch(deleteProduct(Prod.id))}>Delete</Button>
-       <Button onClick={()=>dispatch(addPanier(Prod.id))}> {Prod.panier?"remove from panier":"add to panier"}</Button>
+       <Button onClick={()=>dispatch(addCart(Prod.id))}> {Prod.cart?"remove from cart":"add to cart"}</Button>
        
        
       </Card.Body>

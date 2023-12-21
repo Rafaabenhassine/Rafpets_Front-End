@@ -1,4 +1,4 @@
-import { ADD_PANIER, ADD_PRODUCT, DELETE_PRODUCT, AVAILABLE_PRODUCT, MIN, PLUS } from "../ActionTypes/ActionsTypes"
+import { ADD_CART, ADD_PRODUCT, DELETE_PRODUCT, AVAILABLE_PRODUCT, MIN, PLUS } from "../ActionTypes/ActionsTypes"
 
 export const addProduct=(newProduct)=>{
     return{
@@ -35,10 +35,9 @@ export const  min=(id)=>{
 }
 
 
-
-export const addPanier =(id)=>{
+export const addCart =(id)=>{
 return{
-    type:ADD_PANIER,
+    type:ADD_CART,
     payload:id
 }
 

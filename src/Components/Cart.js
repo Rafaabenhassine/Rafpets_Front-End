@@ -1,11 +1,11 @@
 import React from 'react'
 import Card from "react-bootstrap/Card";
-import { addPanier } from '../JS/Actions/Actions';
+import { addCart } from '../JS/Actions/Actions';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
 
-const Panier = ({prod}) => {
+const Cart = ({prod}) => {
   const dispatch = useDispatch();
 
   return (
@@ -15,12 +15,11 @@ const Panier = ({prod}) => {
       <Card.Body>
         <Card.Title>{prod.name}</Card.Title>
         <Card.Text>DESCRIPTION : {prod.description}</Card.Text>
-        <Card.Text>SIZE : {prod.availableSize}</Card.Text>
         <Card.Text>COLOR : {prod.color}</Card.Text>
         <Card.Text>PRICE : {prod.price}</Card.Text>
         <i>{prod.counter}</i> 
       
-        <Button onClick={()=>dispatch(addPanier(prod.id))}> {prod.panier?"remove from panier":"add to panier"}</Button>
+        <Button onClick={()=>dispatch(addCart(prod.id))}> {prod.cart?"remove from cart":"add to cart"}</Button>
 
       </Card.Body>
     </Card>
@@ -28,4 +27,4 @@ const Panier = ({prod}) => {
   )
 }
 
-export default Panier
+export default Cart

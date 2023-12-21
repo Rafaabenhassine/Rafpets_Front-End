@@ -1,4 +1,4 @@
-import { ADD_PANIER, ADD_PRODUCT, DELETE_PRODUCT, AVAILABLE_PRODUCT, MIN, PLUS } from "../ActionTypes/ActionsTypes";
+import { ADD_CART, ADD_PRODUCT, DELETE_PRODUCT, AVAILABLE_PRODUCT, MIN, PLUS, EDIT_PRODUCT } from "../ActionTypes/ActionsTypes";
 
 
 //initialState//
@@ -16,7 +16,7 @@ ListProduct:[
         "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/Sans-titre---2-02-Personnalis.png",
     available:false,
     counter:0,
-    panier:false
+    cart:false
   
   },
     {
@@ -32,7 +32,7 @@ ListProduct:[
         
     available:false,
     counter:0,
-    panier:false
+    cart:false
   
     },
     {
@@ -45,7 +45,7 @@ ListProduct:[
       posterUrl:
         "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/reste-04-Personnalis.png",
     counter:0,
-    panier:false
+    cart:false
   
 
       },
@@ -60,11 +60,11 @@ ListProduct:[
       "https://all-for-pets.tn/site/images/CHIENS/Selleries/Harnais/reste-06-1-Personnalis.png",
     available:false,
     counter:0,
-    panier:false
+    cart:false
       }
   ],
    
-  Panier :[]
+  Cart :[]
 };
 
 
@@ -72,19 +72,24 @@ ListProduct:[
 const ListReducer=(state=initialState,{type,payload})=>{
     switch (type) {
         case ADD_PRODUCT:
-            return{
-                ...state,ListProduct:[...state.ListProduct,payload]
-            }
+            return{...state,ListProduct:[...state.ListProduct,payload]}
+        case EDIT_PRODUCT:
+            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload.id?
+              {...el,name:payload.name,description:payload.description,posterUrl:payload.posterUrl,price:payload.price}:el)}
         case DELETE_PRODUCT:
             return{...state,ListProduct:state.ListProduct.filter(el=>el.id!==payload)}
         case AVAILABLE_PRODUCT:
-            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?{...el,available:!el.available}:el)}
+            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?
+              {...el,available:!el.available}:el)}
         case PLUS:
-          return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?{...el,counter:el.counter>=6?el.counter:el.counter+1}:el)}
+            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?
+              {...el,counter:el.counter>=15?el.counter:el.counter+1}:el)}
         case MIN:
-          return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?{...el,counter:el.counter<=0?el.counter:el.counter-1}:el)}  
-          case ADD_PANIER:
-            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?{...el,panier:!el.panier}:el)}
+            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?
+              {...el,counter:el.counter<=0?el.counter:el.counter-1}:el)}  
+        case ADD_CART:
+            return{...state,ListProduct:state.ListProduct.map((el)=>el.id===payload?
+              {...el,cart:!el.cart}:el)}
         default:
             return state;
             

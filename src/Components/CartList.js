@@ -1,8 +1,8 @@
 import React from 'react'
-import Panier from './Panier'
+import Cart from './Cart'
 import { useSelector } from 'react-redux'
 
-const PanierList = () => {
+const CartList = () => {
   const Products=useSelector((state)=>state.ListReducer.ListProduct)
   var k=0
     Products.map(prod=>k=k+(prod.price*prod.counter))
@@ -11,10 +11,10 @@ const PanierList = () => {
   return (
     <div>
       <h1>Total price:<span>{k}</span></h1>
-{Products.filter((el)=>el.panier===true).map((prod)=>(<Panier prod={prod} key={prod.id} />))}
+{Products.filter((el)=>el.cart===true).map((prod)=>(<Cart prod={prod} key={prod.id} />))}
 
     </div>
   )
 }
 
-export default PanierList
+export default CartList
